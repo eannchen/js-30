@@ -1,1 +1,1 @@
-# js-30
+# [Wes Bos](https://github.com/wesbos) Vanilla JS 30Days

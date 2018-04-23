@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Scoped CSS Variables and JS</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* root 為 DOM 的根元素，相當於 <html> */
+
+    :root {
+      --spacing: 10px;
+      --blur: 10px;
+      --color: #ffc600;
+    }
+
+    img {
+      padding: var(--spacing);
+      background: var(--color);
+      /* CSS濾鏡(filter) https://developer.mozilla.org/zh-CN/docs/Web/CSS/filter */
+      filter: blur(var(--blur));
+    }
+
+    .hl {
+      color: var(--color);
+    }
+  </style>
+</head>
+
+<body>
+  <h2>Update CSS Variables with
+    <span class='hl'>JS</span>
+  </h2>
+
+  <div class="controls">
+    <label for="spacing">Spacing:</label>
+    <input id="spacing" type="range" name="spacing" min="10" max="200" value="10" data-unit="px">
+
+    <label for="blur">Blur:</label>
+    <input id="blur" type="range" name="blur" min="0" max="25" value="10" data-unit="px">
+
+    <label for="color">Base Color</label>
+    <input id="color" type="color" name="color" value="#ffc600">
+  </div>
+
+  <img src="https://source.unsplash.com/7bwQXzbF6KE/800x500">
+
+
+
+  <!-- Vainilla JS -->
+  <script src="./app.js"></script>
+
+  <!-- jQuery -->
+  <!-- <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script src="./app-jq.js"></script> -->
+</body>
+
+</html>
